@@ -1,0 +1,119 @@
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 6ms
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.4ms)
+Completed 200 OK in 7ms (Views: 6.3ms)
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 7ms
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.3ms)
+Completed 200 OK in 6ms (Views: 6.1ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.3ms)
+Completed 200 OK in 6ms (Views: 6.0ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.4ms)
+Completed 200 OK in 6ms (Views: 6.1ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.3ms)
+Completed 200 OK in 7ms (Views: 6.5ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.3ms)
+Completed 200 OK in 15ms (Views: 14.8ms)
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 16ms
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.3ms)
+Completed 200 OK in 7ms (Views: 6.4ms)
+Processing by MessagesController#index as HTML
+Completed 500 Internal Server Error in 6ms
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.4ms)
+Completed 200 OK in 7ms (Views: 6.2ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.4ms)
+Completed 200 OK in 9979ms (Views: 33.3ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.4ms)
+Completed 200 OK in 2587ms (Views: 26.9ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (88423.1ms)
+Completed 200 OK in 89540ms (Views: 88431.9ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (66527.2ms)
+Completed 200 OK in 85745ms (Views: 83537.1ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (1758.0ms)
+Completed 200 OK in 3264ms (Views: 2543.3ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (80037.9ms)
+Completed 200 OK in 83297ms (Views: 82375.8ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (11946.0ms)
+Completed 200 OK in 13592ms (Views: 11952.5ms)
+Processing by MessagesController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 1498ms (Views: 6.1ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (9153.8ms)
+Completed 200 OK in 10151ms (Views: 9160.5ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (2064.4ms)
+Completed 200 OK in 2726ms (Views: 2070.6ms)
+Processing by MessagesController#index as HTML
+Completed 200 OK in 3804ms (Views: 3803.5ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (1104.6ms)
+Completed 200 OK in 1110ms (Views: 1109.9ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (3746.0ms)
+Completed 200 OK in 3752ms (Views: 3751.3ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (2469.9ms)
+Completed 200 OK in 2476ms (Views: 2475.6ms)
+  Rendered sexy_presenter/messages/index.html.erb (2711.7ms)
+Processing by MessagesController#index as HTML
+Completed 200 OK in 652ms (Views: 651.2ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.4ms)
+Completed 200 OK in 7ms (Views: 6.6ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.3ms)
+Completed 200 OK in 7ms (Views: 6.6ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.3ms)
+Completed 200 OK in 6ms (Views: 6.1ms)
+  Rendered sexy_presenter/messages/index.html.erb (5.4ms)
+Processing by MessagesController#index as HTML
+Completed 200 OK in 3ms (Views: 2.3ms)
+  Rendered sexy_presenter/messages/index.html.erb (6.1ms)
+Processing by MessagesController#index as HTML
+Completed 200 OK in 3ms (Views: 2.5ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.3ms)
+Completed 200 OK in 7ms (Views: 6.4ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.4ms)
+Completed 200 OK in 7ms (Views: 6.6ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.3ms)
+Completed 200 OK in 6ms (Views: 6.2ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.3ms)
+Completed 200 OK in 7ms (Views: 6.8ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.4ms)
+Completed 200 OK in 7ms (Views: 6.4ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.4ms)
+Completed 200 OK in 7ms (Views: 6.5ms)
+  Rendered sexy_presenter/messages/index.html.erb (1.4ms)
+Processing by MessagesController#index as HTML
+Completed 200 OK in 2ms (Views: 2.0ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.6ms)
+Completed 200 OK in 9ms (Views: 8.4ms)
+Processing by MessagesController#index as HTML
+  Rendered messages/index.html.erb (0.3ms)
+Completed 200 OK in 7ms (Views: 6.4ms)
+  Rendered sexy_presenter/messages/index.html.erb (1.5ms)

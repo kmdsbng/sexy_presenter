@@ -1,0 +1,8 @@
+---
+using: MessagePresenter
+---
+<% @messages.each do |m| %>
+<%= m.title %>,<%= m.body %>,<%= m.body_length %>
+<% end %>
+
+
