@@ -175,63 +175,6 @@ module ActionView
 end
 
 module ActionView
-  module Helpers
-    # = Action View Rendering
-    #
-    # Implements methods that allow rendering from a view context.
-    # In order to use this module, all you need is to implement
-    # view_renderer that returns an ActionView::Renderer object.
-    module RenderingHelper
-      # Returns the result of a render that's dictated by the options hash. The primary options are:
-      #
-      # * <tt>:partial</tt> - See <tt>ActionView::PartialRenderer</tt>.
-      # * <tt>:file</tt> - Renders an explicit template file (this used to be the old default), add :locals to pass in those.
-      # * <tt>:inline</tt> - Renders an inline template similar to how it's done in the controller.
-      # * <tt>:text</tt> - Renders the text passed in out.
-      #
-      # If no options hash is passed or :update specified, the default is to render a partial and use the second parameter
-      # as the locals hash.
-      def render(options = {}, locals = {}, &block)
-        #binding.pry
-        case options
-        when Hash
-          if block_given?
-            view_renderer.render_partial(self, options.merge(:partial => options[:layout]), &block)
-          else
-            view_renderer.render(self, options)
-          end
-        else
-          view_renderer.render_partial(self, :partial => options, :locals => locals)
-        end
-      end
-    end
-  end
-end
-
-module ActionView
-  # This is the main entry point for rendering. It basically delegates
-  # to other objects like TemplateRenderer and PartialRenderer which
-  # actually renders the template.
-  #
-  # The Renderer will parse the options from the +render+ or +render_body+
-  # method and render a partial or a template based on the options. The
-  # +TemplateRenderer+ and +PartialRenderer+ objects are wrappers which do all
-  # the setup and logic necessary to render a view and a new object is created
-  # each time +render+ is called.
-  class Renderer
-    # Direct accessor to template rendering.
-    def render_template(context, options) #:nodoc:
-      TemplateRenderer.new(@lookup_context).render(context, options)
-    end
-
-    # Direct access to partial rendering.
-    def render_partial(context, options, &block) #:nodoc:
-      PartialRenderer.new(@lookup_context).render(context, options, block)
-    end
-  end
-end
-
-module ActionView
   class TemplateRenderer < AbstractRenderer #:nodoc:
     def render(context, options)
       @view    = context
@@ -245,23 +188,12 @@ module ActionView
         context.rendered_format = template.formats.first || formats.first
       end
 
+      # Process before_render hook
       if template.class.instance_variable_get(:@presenter) &&
          template.class.instance_variable_get(:@presenter).instance_variable_get(:@__before_render)
         @view.send('instance_eval', &template.class.instance_variable_get(:@presenter).instance_variable_get(:@__before_render))
       end
       render_template(template, options[:layout], options[:locals])
-    end
-
-    # Renders the given template. A string representing the layout can be
-    # supplied as well.
-    def render_template(template, layout_name = nil, locals = nil) #:nodoc:
-      view, locals = @view, locals || {}
-
-      render_with_layout(layout_name, locals) do |layout|
-        instrument(:template, :identifier => template.identifier, :layout => layout.try(:virtual_path)) do
-          template.render(view, locals) { |*name| view._layout_for(*name) }
-        end
-      end
     end
 
   end
