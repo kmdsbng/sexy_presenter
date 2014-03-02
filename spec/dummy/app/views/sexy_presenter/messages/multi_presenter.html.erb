@@ -1,0 +1,13 @@
+---
+using:
+  - PostSummaryPresenter
+  - CommentSummaryPresenter
+---
+<%= @post.summary %>
+<% @post.comments.each {|comment| %>
+  <%= comment.summary %>
+<% } %>
+
+<%= @post_summary_presenter_str %>
+<%= @comment_summary_presenter_str %>
+

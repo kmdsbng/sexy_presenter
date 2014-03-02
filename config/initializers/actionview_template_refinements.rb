@@ -107,8 +107,8 @@ module ActionView
       if frontmatter
         yaml = YAML.load(frontmatter)
         if yaml.kind_of?(Hash) && (presenter_module_name = yaml['using']).present?
-          presenter_module = presenter_module_name.constantize
-          template_class_name = make_template_class_name(template_full_path, presenter_module)
+          presenter_modules = Array(presenter_module_name).map(&:constantize)
+          template_class_name = make_template_class_name(template_full_path, presenter_modules)
           unless Object.const_defined?(template_class_name)
 
             # Create custom template class
@@ -116,12 +116,12 @@ module ActionView
             # This defines custom template class by eval, in top level, because use using method.
             # (Hack:
             #   using method could be used in eval. And in template that was module_evaled,
-            #   refine in presenter_module is effective.)
+            #   refine in presenter_modules is effective.)
             eval("
-            using #{presenter_module_name}
+            #{presenter_modules.map {|mod| "using #{mod.name}"}.join(';')}
 
             class #{template_class_name} < ActionView::Template
-              @presenter = #{presenter_module_name}
+              @presenters = [#{presenter_modules.map {|mod| mod.name}.join(', ')}]
               def eval_template_contents(mod, source)
                 mod.module_eval(source, identifier, #{frontmatter.each_line.to_a.size + 2})
               end
@@ -138,11 +138,11 @@ module ActionView
       [contents, Template]
     end
 
-    def make_template_class_name(template_full_path, presenter_module)
+    def make_template_class_name(template_full_path, presenter_modules)
       'SexyPresenter_' +
         template_full_path.sub(Rails.root.to_s, '').gsub(/[\/\\\-\.]/, '_') +
         '_using_' +
-        presenter_module.name.gsub(/:/, '') +
+        presenter_modules.map(&:name).join('_').gsub(/:/, '') +
         '_Template'
     end
 
@@ -189,9 +189,12 @@ module ActionView
       end
 
       # Process before_render hook
-      if template.class.instance_variable_get(:@presenter) &&
-         template.class.instance_variable_get(:@presenter).instance_variable_get(:@__before_render)
-        @view.send('instance_eval', &template.class.instance_variable_get(:@presenter).instance_variable_get(:@__before_render))
+      if template.class.instance_variable_get(:@presenters)
+        template.class.instance_variable_get(:@presenters).each {|presenter|
+          if presenter.instance_variable_get(:@__before_render)
+            @view.send('instance_eval', &presenter.instance_variable_get(:@__before_render))
+          end
+        }
       end
       render_template(template, options[:layout], options[:locals])
     end
@@ -215,9 +218,12 @@ module ActionView
       end
 
       # Process before_render hook
-      if @template.class.instance_variable_get(:@presenter) &&
-         @template.class.instance_variable_get(:@presenter).instance_variable_get(:@__before_render)
-        @view.send('instance_eval', &@template.class.instance_variable_get(:@presenter).instance_variable_get(:@__before_render))
+      if @template.class.instance_variable_get(:@presenters)
+        @template.class.instance_variable_get(:@presenters).each {|presenter|
+          if presenter.instance_variable_get(:@__before_render)
+            @view.send('instance_eval', &presenter.instance_variable_get(:@__before_render))
+          end
+        }
       end
 
       if @collection
