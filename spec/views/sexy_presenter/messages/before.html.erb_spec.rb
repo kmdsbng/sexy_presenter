@@ -2,14 +2,6 @@ require 'spec_helper'
 
 BeforeSample = Struct.new(:title)
 
-module SexyPresenter
-  module Hooks
-    def before_render(&block)
-      @__before_render = block
-    end
-  end
-end
-
 module BeforeSamplePresenter
   extend SexyPresenter::Hooks
 
