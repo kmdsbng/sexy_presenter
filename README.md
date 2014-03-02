@@ -51,7 +51,7 @@ end
 
 This code works well.
 
-`body_length_type` method is available only in `sample.erb`.
+`body_length_type` method is activated only in `sample.erb`.
 This is nothing more than Refinements behavior.
 
 ## `before_render` hook
