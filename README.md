@@ -9,7 +9,7 @@ To inject presentation logic in view, SexyPresenter use Refinements feature that
 SexyPresenter provides only 2 features.
 
 1. You can assign presenters in view files.
-2. You can use before_render hook in presentation file.
+2. You can use `before_render` hook in presentation file.
 
 
 ## Assign presenter
@@ -54,7 +54,7 @@ This code works well.
 `body_length_type` method is available only in `sample.erb`.
 This is nothing more than Refinements behavior.
 
-## before_render hook
+## `before_render` hook
 
 If you want special initialization logic to a view file, you can use `before_render` hook.
 
