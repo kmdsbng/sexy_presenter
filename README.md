@@ -26,7 +26,7 @@ using: MessagePresenter
 <% end %>
 ```
 
-In this case, Message class has title and body fields in `models/message.rb`.
+In this case, `Message` class has title and body fields in `models/message.rb`.
 But it does not have body_length_type method because body_length_type related only this page.
 
 So, you implement body_length_type method to `Message` class in `MessagePresenter` module using Refinements.
