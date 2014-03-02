@@ -51,6 +51,9 @@ end
 
 This code works well.
 
+`body_length_type` method is available only in `sample.erb`.
+This is nothing more than Refinements behavior.
+
 ## before_render hook
 
 If you want special initialization logic to a view file, you can use `before_render` hook.
