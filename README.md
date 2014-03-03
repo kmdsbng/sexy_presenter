@@ -83,6 +83,22 @@ end
 `before_render` block runs in view context.
 
 
+## To assign more than one presenters
+
+The frontmatter format is YAML. And you can assign more than one presenters in one template.
+
+### multi_presenter_sample.erb
+```erb
+---
+using:
+  - FirstPresenter
+  - SecondPresenter
+---
+
+...
+```
+
+
 
 
 ## Requirement
