@@ -22,7 +22,7 @@ Assign presenter in your view file's frontmatter.
 ### sample.erb
 ```erb
 ---
-using: MessagePresenter
+presenter: MessagePresenter
 ---
 <% @messages.each do |m| %>
 <%= m.title %>,<%= m.body %>,<%= m.body_length_type %>
@@ -65,7 +65,7 @@ If you want special initialization logic to a view file, you can use `before_ren
 ### _header.erb
 ```erb
 ---
-using: HeaderPresenter
+presenter: HeaderPresenter
 ---
 Welcome to our web site.
 Now we have <%= @customer_count %> customers. Join us!

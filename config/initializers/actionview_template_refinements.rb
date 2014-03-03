@@ -1,9 +1,5 @@
 # -*- encoding: utf-8 -*-
 
-#TOPLEVEL_MAIN = self
-
-#using PostShowRole
-
 module ActionView
   # = Action View Template
   class Template
@@ -106,7 +102,7 @@ module ActionView
       frontmatter, contents = separate_frontmatter(org_contents)
       if frontmatter
         yaml = YAML.load(frontmatter)
-        if yaml.kind_of?(Hash) && (presenter_module_name = yaml['using']).present?
+        if yaml.kind_of?(Hash) && (presenter_module_name = yaml['presenter']).present?
           presenter_modules = Array(presenter_module_name).map(&:constantize)
           template_class_name = make_template_class_name(template_full_path, presenter_modules)
           unless Object.const_defined?(template_class_name)
@@ -151,7 +147,7 @@ module ActionView
     # example.html.slim
     # =======================================
     # ---
-    # using: PostShowTemplate
+    # presenter: PostShowTemplate
     # ---
     #
     # h1 Example Page
