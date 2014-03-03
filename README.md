@@ -17,7 +17,8 @@ SexyPresenter provides only 2 features.
 Assign presenter in your view file's frontmatter.
 (SexyPresenter supports any template engines, e.g. .erb, .haml, .slim .)
 
-```sample.erb
+### sample.erb
+```erb
 ---
 using: MessagePresenter
 ---
@@ -33,7 +34,8 @@ So, you implement body_length_type method to `Message` class in `MessagePresente
 We suggest you to implement `MessagePresenter` in `app/presenters/message_presenter`,
 but actually you can make the file in any autoload target directory, or in `config/initializers`.
 
-```app/presenters/message_presenter.rb
+### app/presenters/message_presenter.rb
+```ruby
 module MessagePresenter
   refine Message
     def body_length_type
@@ -58,7 +60,8 @@ This is nothing more than Refinements behavior.
 
 If you want special initialization logic to a view file, you can use `before_render` hook.
 
-```_header.erb
+### _header.erb
+```erb
 ---
 using: HeaderPresenter
 ---
@@ -66,7 +69,8 @@ Welcome to our web site.
 Now we have <%= @customer_count %> customers. Join us!
 ```
 
-```app/presenters/header_presenter
+### app/presenters/header_presenter.rb
+```ruby
 module HeaderPresenter
   before_render do
     @customer_count = ::Customer.count
