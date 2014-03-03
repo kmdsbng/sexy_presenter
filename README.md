@@ -90,7 +90,7 @@ The frontmatter format is YAML. And you can assign more than one presenters in o
 ### multi_presenter_sample.erb
 ```erb
 ---
-using:
+presenter:
   - FirstPresenter
   - SecondPresenter
 ---
