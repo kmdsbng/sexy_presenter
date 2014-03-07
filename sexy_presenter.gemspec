@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Yoshihiro Kameda"]
   s.email       = ["kameda.sbng@gmail.com"]
   s.homepage    = ""
-  s.summary     = "A rails presenter layer library."
-  s.description = "A rails presenter layer library. Extract behaviors with Refinements"
+  s.summary     = "A Rails presentation layer library powered by Refinements."
+  s.description = "A Rails presentation layer library powered by Refinements."
 
   s.files = Dir["{app,config,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
