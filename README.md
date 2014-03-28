@@ -106,7 +106,7 @@ presenter:
 
 SexyPresenter depends on Ruby's Refinements feature.
 
-* Rails 4.0.3 or later.
+* Rails 4.0 or later.
 * Ruby 2.1 or later. (depend on Refinements feature)
 
 
