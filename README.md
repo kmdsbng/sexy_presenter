@@ -1,6 +1,7 @@
 # SexyPresenter - Most powerful Rails presentation layer gem ever.
 
 [![Build Status](https://travis-ci.org/kmdsbng/sexy_presenter.png?branch=master)](https://travis-ci.org/kmdsbng/sexy_presenter)
+[![Gem Version](https://badge.fury.io/rb/sexy_presenter.png)](http://badge.fury.io/rb/sexy_presenter)
 
 SexyPresenter add presentation logic to your Rails application.
 To inject presentation logic in view, SexyPresenter use Refinements feature that added Ruby in version 2.1.
