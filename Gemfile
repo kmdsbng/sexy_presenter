@@ -15,5 +15,5 @@ gemspec
 
 group :development, :test do
   gem 'pry'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.0.0beta2'
 end
