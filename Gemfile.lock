@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     sexy_presenter (0.9.1)
-      rails (~> 4.0.2)
+      rails (~> 4.0)
 
 GEM
   remote: https://rubygems.org/
